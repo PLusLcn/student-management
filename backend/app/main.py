@@ -2,8 +2,10 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine, Base
-from app.models import student
+from app.models import student, user
 from app.routers.students import router as students_router
+from app.routers.auth import router as auth_router
+from app.routers.export import router as export_router
 
 
 @asynccontextmanager
@@ -24,7 +26,8 @@ app = FastAPI(title="学生管理系统", version="1.0", lifespan=lifespan)
 # )
 
 app.include_router(students_router, prefix="/api/v1")
-
+app.include_router(auth_router, prefix="/api/v1/auth")
+app.include_router(export_router, prefix="/api/v1")
 
 @app.get("/")
 def root():

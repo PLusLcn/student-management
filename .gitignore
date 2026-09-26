@@ -11,6 +11,7 @@ dist/
 # IDE
 .vscode/
 *.swp
+.claude/
 
 # OS
 .DS_Store
@@ -18,3 +19,11 @@ Thumbs.db
 
 # Docker
 docker-data/
+
+# 学习计划 / 个人材料（不随项目公开）
+AI全能开发_免费学习计划总纲.md
+project-1-learning-plan.md
+用Claude高效学习_行动大纲.md
+generate_resume.js
+*.docx
+*.pdf
